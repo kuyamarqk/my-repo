@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: inline;
+        }
+       .sidenav {
+            height: 100%;
+            width: 100px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+            }
+            .sidenav ul li{
+                list-style: none;
+            }
+            .sidenav ul li a{
+                text-decoration: none;
+            }
+            
+
+/* Page content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            vertical-align: top;
+        }
+
+        .fadeIn ,span {
+            color: red;
+           
+        }
+        .fadeIn, p {
+            margin: 3px;
+            width: 80px;
+            display: none;
+            height: 80px;
+            float: left;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="sidenav">
+            <ul>
+                <li><a href="" target="#click">click()</a></li>
+                <li><a href="#hide">hide()</a></li>
+                <li><a href="#show">show()</a></li>
+                <li><a href="#toggle">toggle()</a></li>
+                <li><a href="#slideDown">slideDown()</a></li>
+                <li><a href="#slideUp">slideUp()</a></li>
+                <li><a href="#slideToggle">slideToggle()</a></li>
+                <li><a href="#fadeIn">fadeIn()</a></li>
+                <li><a href="#fadeOut">fadeOut()</a></li>
+                <li><a href="#before">before()</a></li>
+                <li><a href="#after">after()</a></li>
+                <li><a href="#append">append()</a></li>
+                <li><a href="#html">html()</a></li>
+                <li><a href="#attr">attr()</a></li>
+                <li><a href="#val">val()</a></li>
+                <li><a href="#text">text()</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>My Mini Documentation</h1>
+            <div id="click">
+                <input type="button" value="click()" class="click">
+                <p>Bind an event handler to the “click” JavaScript event, or trigger that event on an element.</p>
+            </div>
+            <div id="hide">
+                <button>hide()</button>
+                <p id="to-be-hide">Hide the matched elements.</p>
+            </div>
+            <div id="show">
+                <input type="button" value="show()">
+                <p id="to-be-show">Display the matched elements.</p>
+            </div>
+            <div id="toggle">
+                <input type="button" value="toggle()">
+                <p id="to-be-toggle">Display or hide the matched elements.</p>
+            </div>
+            <div id="slideDown">
+                <input type="button" value="slideDown()">
+                <p id="to-be-slideDown">Display the matched elements with a sliding motion.</p>
+            </div>
+            <div id="slideUp">
+                <input type="button" value="slideUp()">
+                <p id="to-be-slideUp">Hide the matched elements with a sliding motion.</p>
+            </div>
+            <div id="slideToggle">
+                <input type="button" value="slideToggle()">
+                <p id="to-be-slideToggle">Display or hide the matched elements with a sliding motion.</p>
+            </div>
+            <div id="fadeIn">
+               <input type="button" value="fadeIn()" id="fadeIn">
+                <p id="to-be-fadeIn"><span>Display the matched elements by fading them to opaque.</span></p>
+            </div>
+            <div id="fadeOut">
+                <input type="button" value="fadeOut()" id="fadeOut">
+                <p id="to-be-fadeOut">Hide the matched elements by fading them to transparent.</p>
+            </div>
+            <div id="before">
+                <input type="button" value="before()">
+                <p>Insert content, specified by the parameter, before each element in the set of matched elements.</p>
+            </div>
+            <div id="after">
+                <input type="button" value="after()"> 
+                <p>Insert content, specified by the parameter, after each element in the set of matched elements.</p>
+            </div>
+            <div id="append">
+                <input type="button" value="append()">
+                <p>Insert content, specified by the parameter, to the end of each element in the set of matched elements.</p>
+            </div>
+            <div id="html">
+                <input type="button" value="html()">
+                <p class="html-display">Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</p>
+            </div>
+            <div id="attr">
+                <input type="button" value="attr()">
+                <p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p>
+                <input id="check1" type="checkbox" checked="checked">
+                <label for="check1">Check me</label>
+                <p id="check"></p>
+            </div>
+            <div id="val">
+                <input type="button" value="val()">
+                <p>Get the current value of the first element in the set of matched elements or set the value of every matched element.</p>
+                <p id="display"></p>
+ 
+                <select id="single">
+                    <option>Single</option>
+                    <option>Single2</option>
+                </select>
+ 
+                <select id="multiple" multiple="multiple">
+                    <option selected="selected">Multiple</option>
+                    <option>Multiple2</option>
+                    <option selected="selected">Multiple3</option>
+                </select>
+            </div>
+            <div id="text">
+                <input type="button" value="text()">
+                <p class="last">Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.</p>
+            </div>
+        </div>
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

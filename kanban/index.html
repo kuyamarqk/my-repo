@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            $('p').mouseenter(function() {
+                $(this).draggable();
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+        
+        .container {
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        div {
+            width: 18%;
+            padding-bottom: 400px;
+            vertical-align: top;
+            border: 2px solid black;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .column_title {
+            background-color: blanchedalmond;
+            text-align: center;
+            padding: 5px 0;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+        
+        p.project {
+            border: 1px solid black;
+            margin: 5px 5px;
+            padding: 5px 5px;
+        }
+        
+        p.project img {
+            position: relative;
+            left: 100px;
+            width: 20px
+        }
+        
+        p.project a {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kanban Board</h1>
+        <div>
+            <p class="column_title">To-Do</p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+        </div>
+        <div>
+            <p class="column_title">In-progress</p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+
+
+        </div>
+        <div>
+            <p class="column_title">For Approval</p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+
+
+        </div>
+        <div>
+            <p class="column_title">Testing</p>
+
+        </div>
+        <div>
+            <p class="column_title">Done</p>
+            <p class="project ui-widget-content">
+                <span>Project Name</span>
+                <img src="image/img1.jpg" alt="img1">
+                <a href="">Project Detail</a>
+            </p>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

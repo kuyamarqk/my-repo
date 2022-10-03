@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.css" integrity="sha512-lCk0aEL6CvAGQvaZ47hoq1v/hNsunE8wD4xmmBelkJjg51DauW6uVdaWEJlwgAE6PxcY7/SThs1T4+IMwwpN7w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Vaccination Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datepicker').datepicker();
+            $('#form-valid').submit(function(event) {
+                event.preventDefault();
+                if (!$('#firstname').val()) {
+                    alert("First Name can't be blank.")
+                } else {
+                    var firstname = $('#firstname').val();
+                }
+                if (!$('#lastname').val()) {
+                    alert("Last Name can't be blank")
+                } else {
+                    var lastname = $('#lastname').val();
+                }
+                if (!$('#datepicker').val()) {
+                    alert("date can't be blank")
+                } else {
+                    var date = $('#datepicker').val();
+                }
+                if (firstname && lastname && date) {
+                    alert('Success, ' + firstname + ' ' + lastname + '! Your vaccination is reserved on ' + date);
+                }
+
+            });
+
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vaccination Schedule</h1>
+        <form id="form-valid" method="post">
+            <p><label>First name: <input type="text" name="firstname" id="firstname"></label></p>
+            <p><label>Last name: <input type="text" name="lastname" id="lastname"></label></p>
+            <p><label>Date: <input type="text" name="date" id="datepicker"></label></p>
+            <p><input type="submit" value="Reserve" id="btn"></p>
+
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>

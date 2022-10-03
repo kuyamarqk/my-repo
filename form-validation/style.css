@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    background-color: khaki;
+    padding: 20px 50px;
+    border-radius: 12%;
+    border: 2px solid black;
+    width: 30%;
+}
+
+label {
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background-color: aqua;
+    border-radius: 12%;
+}
