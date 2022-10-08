@@ -1,0 +1,59 @@
+.container{
+    margin: 0 auto;
+    width: 100%
+}
+nav{
+    display: inline-block;
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+nav h1{
+    width: 100px;
+    display: inline-block;
+}
+nav ul{
+    width: 250px;
+    vertical-align: top;
+    display:inline-block;
+}
+nav ul li{
+    list-style: none;
+    vertical-align: top;
+    display:inline;
+    position:relative;
+    left: 500px;
+}
+
+.comment-box{
+    width: 800px;
+    margin: 20px;
+}
+.reply-box{
+    margin-left: 50px;
+}
+.registration{
+    border:2px solid black;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 16%;
+    position:relative;
+    left: 250px;
+}
+.registration .botton{
+    padding: 5px 100px;
+    margin: 20px
+}
+.login{
+    border:2px solid black;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 16%;
+    position:relative;
+    left: 250px;
+}
+.login .botton{
+    padding: 5px 100px;
+    margin: 20px;
+}
