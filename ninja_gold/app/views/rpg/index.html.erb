@@ -1,0 +1,55 @@
+<div class="container">
+    <div class = "money">
+    <p>Your Gold: <input type="text" name="money" value = "<%= session[:gold] %>"></p>
+    </div>
+    <div class="row">
+        <div class="box">
+            <form action="/process/farm" method="post">
+                <p>Farm</p>
+                <p>(earns 10-20)</p>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="money" value="<%= session[:gold] %>">
+                <input type="hidden" name="method" value="farm">
+                <p><input type="submit" value="Find Gold!"></p>
+            </form>
+        </div>
+         <div class="box">
+            <form action="/process/cave" method="post">
+                <p>Cave</p>
+                <p>(earns 5-10)</p>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="money" value="<%= session[:gold] %>">
+                <input type="hidden" name="method" value="cave">
+                <p><input type="submit" value="Find Gold!"></p>
+            </form>
+        </div>
+         <div class="box">
+            <form action="/process/house" method="post">
+                <p>House</p>
+                <p>(earns 2-5)</p>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="money" value="<%= session[:gold] %>">
+                <input type="hidden" name="method" value="house">
+                <p><input type="submit" value="Find Gold!"></p>
+            </form>
+        </div>
+         <div class="box">
+            <form action="/process/casino" method="post">
+                <p>Casino</p>
+                <p>(earns/takes 0-50)</p>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="money" value="<%= session[:gold] %>">
+                <input type="hidden" name="method" value="casino">
+                <p><input type="submit" value="Find Gold!"></p>
+            </form>
+        </div>
+    </div>
+    <div class="activity">
+        <p> Activity: </p>
+        <div class="activity-box">
+            <% @activities.each do|color, msg|%>
+                <p class="<%= color %>"><%= msg %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
