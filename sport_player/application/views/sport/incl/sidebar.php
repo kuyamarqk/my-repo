@@ -1,52 +1,29 @@
-<form action="#" method="post">
+<form action="<?= base_url('filter')?>" method="post">
     <div class="form-group mb-4">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <input type="text" class="form-control" id="name" name="name">
                 </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="gender" id="gender" value="checkedValue" >
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="gender" id="gender" value="checkedValue" >
-                    Female
-                    </label>
-                 </div>
+                <fieldset class="form-group">
+                            <div class="radioGroup">
+                                <label>
+                                    <input type="radio" name="gender" value="male" checked>
+                                    Male
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="female" >
+                                    Female
+                                </label>
+                            </div>
+                        </fieldset>
                  <h3>Sports</h3>
-                 <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                     BasketBall
-                   </label>
-                 </div>
-                 <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                     Volleyball
-                   </label>
-                 </div>
-                 <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                     Baseball
-                   </label>
-                 </div>
-                 <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                     Soccer
-                   </label>
-                 </div>
-                 <div class="form-check">
-                   <label class="form-check-label">
-                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" >
-                     Football
-                   </label>
-                 </div>
-                <input type="submit" value="Search" class="btn btn-outline-primary text-end">
+                 <?php foreach($all->result_array() as $key => $value){ ?>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="sport[<?= $key?>]" id="sport" value=" <?= $value['id']?>" >
+                                    <?= $value['name']?>
+                                </label>
+                            </div>
+                        <?php }?>                <input type="submit" value="Search" class="btn btn-outline-primary text-end">
                       
                     
                 

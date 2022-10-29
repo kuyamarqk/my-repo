@@ -13,6 +13,7 @@ class Product extends CI_Controller{
         $data = array();
         $this->load->model('Products');
         $data['all'] = $this->Products->get_all();
+        $data['players'] = $this->Products->get_players();
         $this->load->view("product/index",$data);
     }
     public function add(){

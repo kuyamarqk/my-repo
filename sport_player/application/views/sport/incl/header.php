@@ -9,3 +9,8 @@
 </head>
 <body>
 <div class="container">
+    <nav class="nav justify-content-center">
+      <a class="nav-link" href="<?= base_url('/')?>">HOME</a>
+      <a class="nav-link" href="<?= base_url('add')?>">Add Player</a>
+      <a class="nav-link" href="<?= base_url('sport')?>">Sports List</a>
+    </nav>
