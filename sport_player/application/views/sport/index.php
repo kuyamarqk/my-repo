@@ -5,7 +5,7 @@
         </div>
         <div class="col-sm-8 md-6 rounded border border mb-4">
         <div class="row">
-            <?php foreach($players->result_array() as $key => $value){?>
+            <?php foreach($players as $key => $value){?>
             <div class="col-sm-4 col-md-8 col-lg-4">
                 <div class="card">
                     <div class="card-body">

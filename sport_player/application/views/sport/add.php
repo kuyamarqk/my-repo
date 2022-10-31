@@ -20,24 +20,24 @@
                             <input type="text" class="form-control" name="img_link">
                         </div>
                         <fieldset class="form-group">
-                            <div class="radioGroup">
-                                <label>
-                                    <input type="radio" name="gender" value="male" checked>
-                                    Male
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender" value="female" >
-                                    Female
-                                </label>
+                        <?php foreach($gender->result_array() as $key => $value){ 
+                            
+                            ?>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="gender" id="gender" value="<?= $value['id']?>" >
+                                <?= $value['gender_name']?>
+                              </label>
                             </div>
+                        <?php }?>
                         </fieldset>
                         
                         <h3>Sports</h3>
-                        <?php foreach($all->result_array() as $key => $value){ ?>
+                        <?php foreach($sport->result_array() as $key => $value){ ?>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="sport[<?= $key?>]" id="sport" value="<?= $value['id']?>" >
-                                    <?= $value['name']?>
+                                    <?= $value['sport_name']?>
                                 </label>
                             </div>
                         <?php }?>

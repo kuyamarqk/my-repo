@@ -9,54 +9,41 @@
         }
         public function index(){
             $this->load->model('Sport_model');
-            $data['all'] = $this->Sport_model->get_sport();
+            $data['sport'] = $this->Sport_model->get_sport();
             $data['players'] = $this->Sport_model->get_players();
+            $data['gender'] = $this->Sport_model->get_gender();
             $this->load->view('sport/index',$data);
         }
         public function filter(){
-            $post = $this->input->post();
             $this->load->model('Sport_model');
-            $data['all'] = $this->Sport_model->get_sport();
-            $data['players'] = $this->Sport_model->fetch_players($post);
+            $query = $this->Sport_model->filter();
+            $data['sport'] = $this->Sport_model->get_sport();
+            $data['gender'] = $this->Sport_model->get_gender();
+            $data['players'] = $this->Sport_model->fetch_players($query);
             $this->load->view('sport/index',$data);
         }
         public function add_player(){
             $this->load->model('Sport_model');
-            $data['all'] = $this->Sport_model->get_sport();
+            $data['sport'] = $this->Sport_model->get_sport();
+            $data['gender'] = $this->Sport_model->get_gender();
             $this->load->view('sport/add',$data);
         }
         public function create_player(){
-            $post = $this->input->post();
-            
             $this->load->model('Sport_model');
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('first_name', 'First Name','required|trim');
-            $this->form_validation->set_rules('last_name', 'last Name','required|trim');
-            $this->form_validation->set_rules('img_link', 'Link', 'trim|required');
-
-
-            if($this->form_validation->run() === FALSE){
-                var_dump($post);
-            }else{
-                $data = array(
-                    'first_name' => $post['first_name'],
-                    'last_name' => $post['last_name'],
-                    'img' => $post['img_link'],
-                    'gender' => $post['gender'] 
-                    
-                );
-                    $this->Sport_model->add_player($data, $post['sport']);
-                    $this->session->set_flashdata('success', 'Successfully added!');
-                    redirect('add');
-                    
+            $result = $this->Sport_model->validate($this->input->post());
+            if($result == true) {
+                redirect('add');
             }
 
         }
         public function sport_list(){
             $this->load->model('Sport_model');
-            $data['all'] = $this->Sport_model->get_sport();
+            $data['sport'] = $this->Sport_model->get_sport();
+            $data['gender'] = $this->Sport_model->get_gender();
+            $data['players'] = $this->Sport_model->get_players();
             $this->load->view('sport/sport_list',$data);
         }
+        
         public function add_sport(){
             $post = $this->input->post();
             $this->load->model('Sport_model');

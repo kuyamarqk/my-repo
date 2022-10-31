@@ -15,11 +15,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php if($all !== null){
-                        foreach($all->result_array() as $key => $value){?>
+                    <?php if($sport !== null){
+                        foreach($sport->result_array() as $key => $value){?>
                             <tr>
                                 <td><?php echo $value['id'];?></td>
-                                <td><?php echo $value['name'];?></td>
+                                <td><?php echo $value['sport_name'];?></td>
                                 <td>VIEW|EDIT|DELETE</td>
                             </tr>
                         <?php

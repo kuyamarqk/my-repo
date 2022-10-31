@@ -4,26 +4,26 @@
         <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <fieldset class="form-group">
-                            <div class="radioGroup">
-                                <label>
-                                    <input type="radio" name="gender" value="male" checked>
-                                    Male
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender" value="female" >
-                                    Female
+                            <?php foreach($gender->result_array() as $key => $value){ 
+                                ?>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="gender[<?= $key?>]" id="gender" value=" <?= $value['id']?>" >
+                                    <?= $value['gender_name']?>
                                 </label>
                             </div>
+                        <?php }?>  
                         </fieldset>
                  <h3>Sports</h3>
-                 <?php foreach($all->result_array() as $key => $value){ ?>
+                 <?php foreach($sport->result_array() as $key => $value){ ?>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="sport[<?= $key?>]" id="sport" value=" <?= $value['id']?>" >
-                                    <?= $value['name']?>
+                                    <?= $value['sport_name']?>
                                 </label>
                             </div>
-                        <?php }?>                <input type="submit" value="Search" class="btn btn-outline-primary text-end">
+                        <?php }?>               
+                         <input type="submit" value="Search" class="btn btn-outline-primary text-end">
                       
                     
                 
